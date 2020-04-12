@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Point {
     String id
     double x,y;
@@ -58,7 +61,32 @@ class Point {
     }
 
 
+}
 
+class Canvas
+{
+    List<Point> points;
+
+    public Canvas() {
+        points=new ArrayList<>();
+    }
+
+    void addPoint(Point point)
+    {
+        points.add(point);
+    }
+    void deletePoint(Point point)
+    {
+        points.remove(point);
+    }
+    void moveAllPoints(int index)
+    {
+        for (point : points)
+        {
+            point.x+=index;
+            point.y+=index;
+        }
+    }
 }
 class Scratch {
     public static void main(String[] args) {
